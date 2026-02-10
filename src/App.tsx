@@ -100,17 +100,11 @@ const FEP_SERVICES = [
 
 // --- FEP Logo ---
 const FepLogo = ({ className = "h-12" }) => (
-  <svg viewBox="0 0 300 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="0" y="5" width="50" height="65" fill="#007BC0" />
-    <path d="M15 15 L17 19 L22 19 L18 22 L19 27 L15 24 L11 27 L12 22 L8 19 L13 19 Z" fill="white" />
-    <path d="M-5 60 Q 25 55 55 35" stroke="#8BC53F" strokeWidth="6" strokeLinecap="round" />
-    <path d="M-5 68 Q 25 63 55 43" stroke="#F39C12" strokeWidth="6" strokeLinecap="round" />
-    <path d="M-5 76 Q 25 71 55 51" stroke="#E6007E" strokeWidth="6" strokeLinecap="round" />
-    <text x="65" y="38" fontFamily="Arial" fontWeight="bold" fontSize="32" fill="#007BC0">FEP</text>
-    <text x="132" y="38" fontFamily="Arial" fontSize="32" fill="#004A8F">Sud-Est</text>
-    <text x="65" y="58" fontFamily="Arial" fontSize="10" fill="#004A8F">Fédération des Entreprises de Propreté</text>
-    <text x="65" y="70" fontFamily="Arial" fontSize="8" fill="#004A8F">PACA • CORSE • LANGUEDOC-ROUSSILLON</text>
-  </svg>
+  <img 
+    src="https://www.fep-sud-est.com/wp-content/uploads/2021/11/Logo_FEP_2021_SUDEST.svg" 
+    alt="FEP Sud-Est" 
+    className={className}
+  />
 );
 
 const LeadForm = ({ onSubmit, diagnosticData = null }) => {
