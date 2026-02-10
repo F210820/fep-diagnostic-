@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+.DS_Store
+*.local
+server_log.txt
+fep-landing/node_modules
+fep-landing/dist
