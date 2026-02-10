@@ -145,29 +145,48 @@ const LeadForm = ({ onSubmit, diagnosticData = null }) => {
     e.preventDefault();
     setIsSubmitting(true);
     const fd = new FormData();
-    fd.append("_subject", `NOUVEAU LEAD DIRIGEANT - ${formData.company.toUpperCase()}`);
-    fd.append("_cc", formData.email);
     
-    // Informations identifiées pour les services
-    fd.append("DIRIGEANT - Nom", formData.lastName); 
-    fd.append("DIRIGEANT - Prenom", formData.firstName);
-    fd.append("ENTREPRISE", formData.company); 
+    fd.append("_subject", `RAPPORT STRATÉGIQUE FEP - ${formData.company.toUpperCase()}`);
+    fd.append("_cc", formData.email); 
+    
+    fd.append("--- FICHE DE LIAISON DIRIGEANT ---", "");
+    fd.append("DIRIGEANT", `${formData.lastName} ${formData.firstName}`);
+    fd.append("STRUCTURE", formData.company);
     fd.append("CODE NAF", formData.naf);
-    fd.append("EMAIL DE CONTACT", formData.email); 
-    fd.append("TELEPHONE DIRECT", formData.phone);
+    fd.append("MOBILE DIRECT", formData.phone);
+    fd.append("EMAIL", formData.email);
+    fd.append("EFFECTIF DÉCLARÉ", `${diagnosticData.employeeCount} salariés`);
     
     if (diagnosticData) {
-        fd.append("--- VOTRE BILAN STRATEGIQUE FEP ---", "");
-        fd.append("NOTE DE CONFORMITE", `${diagnosticData.score}/10`);
-        fd.append("EFFECTIF DECLARE", `${diagnosticData.employeeCount} salaries`);
+        fd.append("--- VOTRE BILAN DE CONFORMITÉ ---", "");
+        fd.append("NOTE GLOBALE", `${diagnosticData.score}/10`);
         
-        fd.append("1. SECURITE JURIDIQUE", "Acces illimite a la permanence CCN Propreté et aide aux transferts Annexe 7.");
-        fd.append("2. PERFORMANCE ECO", "Indices de revision de prix et matrices de calcul du cout de revient.");
-        fd.append("3. FORMATION", "Ingenierie AKTO et acces prioritaire aux formations metiers INHNI.");
-        fd.append("4. STRATEGIE RSE", "Accompagnement et valorisation des appels d'offres.");
-        fd.append("5. RESEAUTAGE", "Acces aux Clubs Dirigeants pour rompre l'isolement.");
+        const diagnosticIntro = diagnosticData.score < 6 
+            ? "ATTENTION : Votre score révèle des zones de risques critiques qui nécessitent une mise en conformité rapide pour protéger votre responsabilité de dirigeant."
+            : "BILAN POSITIF : Vous disposez de bases solides, mais certains leviers de croissance et de sécurisation peuvent encore être optimisés.";
+        fd.append("ANALYSE SYNTHÉTIQUE", diagnosticIntro);
+
+        fd.append("--- DÉTAIL DE VOTRE ACCOMPAGNEMENT FEP ---", "");
         
-        fd.append("POUR ALLER PLUS LOIN", "Contactez Sofia Soltane au 06 50 28 26 95");
+        fd.append("🛡️ 1. SÉCURITÉ JURIDIQUE & SOCIALE", 
+            "La CCN Propreté est l'une des plus complexes de France. La FEP vous donne accès à sa permanence SVP pour valider vos procédures disciplinaires, vos contrats et surtout vos transferts de personnel (Annexe 7), évitant ainsi des litiges coûteux.");
+
+        fd.append("📈 2. PERFORMANCE ÉCONOMIQUE", 
+            "Défendez vos marges face à l'inflation. Nous vous fournissons les indices officiels de révision de prix FEP et les matrices de calcul du coût de revient pour justifier vos hausses de tarifs face à vos clients.");
+
+        fd.append("🎓 3. FORMATION & COMPÉTENCES", 
+            "Valorisez votre capital humain. Nous pilotons pour vous l'ingénierie de financement via l'AKTO et vous ouvrons les portes de l'INHNI pour former vos agents (CQP) et vos managers, sans peser sur votre trésorerie.");
+
+        fd.append("🌱 4. ENGAGEMENT RSE & MARCHÉS", 
+            "Gagnez les marchés de demain. Nous vous accompagnons dans votre stratégie RSE sectorielle et vers la notation extra-financière pour transformer vos engagements en arguments commerciaux gagnants.");
+
+        fd.append("🤝 5. RÉSEAUTAGE & PROXIMITÉ", 
+            "Ne restez plus seul. En adhérant, vous rejoignez une communauté de pairs en PACA, Corse et Languedoc-Roussillon. Nos Clubs (Jeunes Dirigeants, Femmes de Propreté) sont des lieux d'échange précieux.");
+
+        fd.append("--- VOTRE CONTACT DÉDIÉ ---", "");
+        fd.append("CHARGÉE DE DÉVELOPPEMENT", "Sofia Soltane");
+        fd.append("LIGNE DIRECTE", "06 50 28 26 95");
+        fd.append("EMAIL", "services@fep-sud-est.com");
     }
 
     try {
