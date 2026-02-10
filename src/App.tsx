@@ -90,12 +90,42 @@ const QUESTIONS: Question[] = [
 ];
 
 const FEP_SERVICES = [
-  { icon: Scale, title: "Juridique & Social", content: "Consultations CCN Propreté et transferts de personnel.", color: "bg-blue-50 text-blue-600" },
-  { icon: TrendingUp, title: "Veille Économique", content: "Indices de révision de prix et analyses de rentabilité.", color: "bg-orange-50 text-orange-600" },
-  { icon: Award, title: "Formation", content: "Ingénierie de financement AKTO et accès INHNI.", color: "bg-green-50 text-green-600" },
-  { icon: ShieldCheck, title: "Santé & QSE", content: "Prévention des TMS et mise à jour du Document Unique.", color: "bg-pink-50 text-pink-600" },
-  { icon: FileText, title: "RSE & Labels", content: "Accompagnement Qualipropre et notation extra-financière.", color: "bg-purple-50 text-purple-600" },
-  { icon: Users, title: "Réseau", content: "Clubs Dirigeants et échanges entre pairs de la région.", color: "bg-indigo-50 text-indigo-600" }
+  { 
+    icon: Scale, 
+    title: "Conseil Juridique & Social", 
+    content: "Sécurisez vos décisions employeur avec notre permanence dédiée (SVP) : interprétation de la CCN Propreté, procédures disciplinaires, gestion experte des transferts (Annexe 7) et relations avec les IRP.", 
+    color: "bg-blue-50 text-blue-600" 
+  },
+  { 
+    icon: TrendingUp, 
+    title: "Performance Économique", 
+    content: "Défendez vos marges face aux hausses du SMIC et à l'inflation grâce aux indices officiels de révision de prix FEP, nos matrices de calcul du coût de revient et nos analyses régulières de conjoncture.", 
+    color: "bg-orange-50 text-orange-600" 
+  },
+  { 
+    icon: Award, 
+    title: "Formation & Métiers", 
+    content: "Valorisez votre capital humain avec l'INHNI (CQP, TFP, Apprentissage) et bénéficiez d'un accompagnement personnalisé pour l'ingénierie de financement de vos plans de formation via l'OPCO AKTO.", 
+    color: "bg-green-50 text-green-600" 
+  },
+  { 
+    icon: ShieldCheck, 
+    title: "Prévention, Santé & QSE", 
+    content: "Bénéficiez d'outils opérationnels pour la mise à jour de votre Document Unique (DUER), la prévention des TMS sur chantiers et de conseils d'experts pour réduire vos taux de cotisation AT/MP.", 
+    color: "bg-pink-50 text-pink-600" 
+  },
+  { 
+    icon: FileText, 
+    title: "RSE & Développement Durable", 
+    content: "Gagnez des marchés publics et privés en valorisant vos engagements avec le Club RSE sectoriel, l'accompagnement à la notation extra-financière et la mise en avant de vos clauses sociales et vertes.", 
+    color: "bg-purple-50 text-purple-600" 
+  },
+  { 
+    icon: Users, 
+    title: "Réseau & Information", 
+    content: "Rompez l'isolement du dirigeant via nos clubs thématiques (JD, Femmes de Propreté) et restez informé en temps réel avec notre newsletter FEPSE Hebdo et nos groupes d'alertes WhatsApp législatifs.", 
+    color: "bg-indigo-50 text-indigo-600" 
+  }
 ];
 
 // --- FEP Logo ---
